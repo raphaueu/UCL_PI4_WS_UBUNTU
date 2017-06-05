@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PI4_WSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="funcionario">
+    <Key>
+      <PropertyRef Name="idfuncionario" />
+    </Key>
+    <Property Name="idfuncionario" Type="Int32" Nullable="false" />
+    <Property Name="matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idusuario" Type="Int32" Nullable="false" />
+    <Property Name="treinamento" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idsala" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="predio">
+    <Key>
+      <PropertyRef Name="idpredio" />
+    </Key>
+    <Property Name="idpredio" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qtdandar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sala">
+    <Key>
+      <PropertyRef Name="idsala" />
+    </Key>
+    <Property Name="idsala" Type="Int32" Nullable="false" />
+    <Property Name="nome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="numero" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="andar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idpredio" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="funcionario_sala">
+    <End Role="sala" Type="Self.sala" Multiplicity="1" />
+    <End Role="funcionario" Type="Self.funcionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sala">
+        <PropertyRef Name="idsala" />
+      </Principal>
+      <Dependent Role="funcionario">
+        <PropertyRef Name="idsala" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sala_predio">
+    <End Role="predio" Type="Self.predio" Multiplicity="1" />
+    <End Role="sala" Type="Self.sala" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="predio">
+        <PropertyRef Name="idpredio" />
+      </Principal>
+      <Dependent Role="sala">
+        <PropertyRef Name="idpredio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PI4_WSEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="funcionario" EntityType="Self.funcionario" />
+    <EntitySet Name="predio" EntityType="Self.predio" />
+    <EntitySet Name="sala" EntityType="Self.sala" />
+    <AssociationSet Name="funcionario_sala" Association="Self.funcionario_sala">
+      <End Role="sala" EntitySet="sala" />
+      <End Role="funcionario" EntitySet="funcionario" />
+    </AssociationSet>
+    <AssociationSet Name="sala_predio" Association="Self.sala_predio">
+      <End Role="predio" EntitySet="predio" />
+      <End Role="sala" EntitySet="sala" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

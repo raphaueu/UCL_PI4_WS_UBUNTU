@@ -1,0 +1,10 @@
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\PI4_WEBSERVICE.dll
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\EntityFramework.dll
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\PI4_WEBSERVICE.pdb
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\PI4_WEBSERVICE.dll.config
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\bin\Debug\EntityFramework.xml
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\obj\Debug\ConsoleApp1.csprojResolveAssemblyReference.cache
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

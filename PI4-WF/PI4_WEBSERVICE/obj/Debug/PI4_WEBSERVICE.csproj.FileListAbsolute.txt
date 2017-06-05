@@ -4,3 +4,13 @@ c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\bi
 c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.csprojResolveAssemblyReference.cache
 c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.dll
 c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.pdb
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.csprojResolveAssemblyReference.cache
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\PI4_WEBSERVICE.dll.config
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\PI4_WEBSERVICE.dll
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\PI4_WEBSERVICE.pdb
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\EntityFramework.dll
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\EntityFramework.SqlServer.dll
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\EntityFramework.xml
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\bin\EntityFramework.SqlServer.xml
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.dll
+C:\Users\rphlmbzr\Documents\GitHub\UCL_PI4_WS_UBUNTU\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.pdb

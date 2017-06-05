@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PI4_WSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="funcionario">
+          <Key>
+            <PropertyRef Name="idfuncionario" />
+          </Key>
+          <Property Name="idfuncionario" Type="int" Nullable="false" />
+          <Property Name="matricula" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="idusuario" Type="int" Nullable="false" />
+          <Property Name="treinamento" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="idsala" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="predio">
+          <Key>
+            <PropertyRef Name="idpredio" />
+          </Key>
+          <Property Name="idpredio" Type="int" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="120" Nullable="false" />
+          <Property Name="qtdandar" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="descricao" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sala">
+          <Key>
+            <PropertyRef Name="idsala" />
+          </Key>
+          <Property Name="idsala" Type="int" Nullable="false" />
+          <Property Name="nome" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="numero" Type="varchar" MaxLength="8" Nullable="false" />
+          <Property Name="andar" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="idpredio" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="funcionario_sala">
+          <End Role="sala" Type="Self.sala" Multiplicity="1" />
+          <End Role="funcionario" Type="Self.funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sala">
+              <PropertyRef Name="idsala" />
+            </Principal>
+            <Dependent Role="funcionario">
+              <PropertyRef Name="idsala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sala_predio">
+          <End Role="predio" Type="Self.predio" Multiplicity="1" />
+          <End Role="sala" Type="Self.sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="predio">
+              <PropertyRef Name="idpredio" />
+            </Principal>
+            <Dependent Role="sala">
+              <PropertyRef Name="idpredio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI4_WSModelStoreContainer">
+          <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="predio" EntityType="Self.predio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sala" EntityType="Self.sala" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="funcionario_sala" Association="Self.funcionario_sala">
+            <End Role="sala" EntitySet="sala" />
+            <End Role="funcionario" EntitySet="funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="sala_predio" Association="Self.sala_predio">
+            <End Role="predio" EntitySet="predio" />
+            <End Role="sala" EntitySet="sala" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PI4_WSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="funcionario">
+          <Key>
+            <PropertyRef Name="idfuncionario" />
+          </Key>
+          <Property Name="idfuncionario" Type="Int32" Nullable="false" />
+          <Property Name="matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idusuario" Type="Int32" Nullable="false" />
+          <Property Name="treinamento" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idsala" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="predio">
+          <Key>
+            <PropertyRef Name="idpredio" />
+          </Key>
+          <Property Name="idpredio" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="qtdandar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sala">
+          <Key>
+            <PropertyRef Name="idsala" />
+          </Key>
+          <Property Name="idsala" Type="Int32" Nullable="false" />
+          <Property Name="nome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="numero" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="andar" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="idpredio" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="funcionario_sala">
+          <End Role="sala" Type="Self.sala" Multiplicity="1" />
+          <End Role="funcionario" Type="Self.funcionario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="sala">
+              <PropertyRef Name="idsala" />
+            </Principal>
+            <Dependent Role="funcionario">
+              <PropertyRef Name="idsala" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="sala_predio">
+          <End Role="predio" Type="Self.predio" Multiplicity="1" />
+          <End Role="sala" Type="Self.sala" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="predio">
+              <PropertyRef Name="idpredio" />
+            </Principal>
+            <Dependent Role="sala">
+              <PropertyRef Name="idpredio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PI4_WSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="funcionario" EntityType="Self.funcionario" />
+          <EntitySet Name="predio" EntityType="Self.predio" />
+          <EntitySet Name="sala" EntityType="Self.sala" />
+          <AssociationSet Name="funcionario_sala" Association="Self.funcionario_sala">
+            <End Role="sala" EntitySet="sala" />
+            <End Role="funcionario" EntitySet="funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="sala_predio" Association="Self.sala_predio">
+            <End Role="predio" EntitySet="predio" />
+            <End Role="sala" EntitySet="sala" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PI4_WSModelStoreContainer" CdmEntityContainer="PI4_WSEntities">
+          <EntitySetMapping Name="funcionario">
+            <EntityTypeMapping TypeName="PI4_WSModel.funcionario">
+              <MappingFragment StoreEntitySet="funcionario">
+                <ScalarProperty Name="idfuncionario" ColumnName="idfuncionario" />
+                <ScalarProperty Name="matricula" ColumnName="matricula" />
+                <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+                <ScalarProperty Name="treinamento" ColumnName="treinamento" />
+                <ScalarProperty Name="idsala" ColumnName="idsala" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="predio">
+            <EntityTypeMapping TypeName="PI4_WSModel.predio">
+              <MappingFragment StoreEntitySet="predio">
+                <ScalarProperty Name="idpredio" ColumnName="idpredio" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="qtdandar" ColumnName="qtdandar" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sala">
+            <EntityTypeMapping TypeName="PI4_WSModel.sala">
+              <MappingFragment StoreEntitySet="sala">
+                <ScalarProperty Name="idsala" ColumnName="idsala" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="numero" ColumnName="numero" />
+                <ScalarProperty Name="andar" ColumnName="andar" />
+                <ScalarProperty Name="idpredio" ColumnName="idpredio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

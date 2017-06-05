@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using PI4_WEBSERVICE.Modelo;
+using System.Xml.Serialization;
 
 namespace PI4_WEBSERVICE
 {
@@ -16,11 +18,21 @@ namespace PI4_WEBSERVICE
     // [System.Web.Script.Services.ScriptService]
     public class WS : System.Web.Services.WebService
     {
+        private RepositorioSala repsala;
+
+        [XmlInclude(typeof(sala))]
+        [XmlInclude(typeof(funcionario))]
+        [XmlInclude(typeof(predio))]
 
         [WebMethod]
-        public string HelloWorld()
-        {
-            return "Olá, Mundo";
+          
+        public List<sala> GetSalas() {
+
+            repsala = new RepositorioSala();
+
+            return repsala.Getall();
+
         }
+
     }
 }

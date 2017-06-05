@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PI4_WSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="funcionario">
+    <Key>
+      <PropertyRef Name="idfuncionario" />
+    </Key>
+    <Property Name="idfuncionario" Type="int" Nullable="false" />
+    <Property Name="matricula" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="idusuario" Type="int" Nullable="false" />
+    <Property Name="treinamento" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="idsala" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="predio">
+    <Key>
+      <PropertyRef Name="idpredio" />
+    </Key>
+    <Property Name="idpredio" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="qtdandar" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="descricao" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sala">
+    <Key>
+      <PropertyRef Name="idsala" />
+    </Key>
+    <Property Name="idsala" Type="int" Nullable="false" />
+    <Property Name="nome" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="numero" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="andar" Type="varchar" MaxLength="45" Nullable="false" />
+    <Property Name="idpredio" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="funcionario_sala">
+    <End Role="sala" Type="Self.sala" Multiplicity="1" />
+    <End Role="funcionario" Type="Self.funcionario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sala">
+        <PropertyRef Name="idsala" />
+      </Principal>
+      <Dependent Role="funcionario">
+        <PropertyRef Name="idsala" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="sala_predio">
+    <End Role="predio" Type="Self.predio" Multiplicity="1" />
+    <End Role="sala" Type="Self.sala" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="predio">
+        <PropertyRef Name="idpredio" />
+      </Principal>
+      <Dependent Role="sala">
+        <PropertyRef Name="idpredio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PI4_WSModelStoreContainer">
+    <EntitySet Name="funcionario" EntityType="Self.funcionario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="predio" EntityType="Self.predio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sala" EntityType="Self.sala" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="funcionario_sala" Association="Self.funcionario_sala">
+      <End Role="sala" EntitySet="sala" />
+      <End Role="funcionario" EntitySet="funcionario" />
+    </AssociationSet>
+    <AssociationSet Name="sala_predio" Association="Self.sala_predio">
+      <End Role="predio" EntitySet="predio" />
+      <End Role="sala" EntitySet="sala" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

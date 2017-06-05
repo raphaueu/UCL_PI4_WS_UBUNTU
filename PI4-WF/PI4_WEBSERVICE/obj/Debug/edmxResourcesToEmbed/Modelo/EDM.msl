@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PI4_WSModelStoreContainer" CdmEntityContainer="PI4_WSEntities">
+    <EntitySetMapping Name="funcionario">
+      <EntityTypeMapping TypeName="PI4_WSModel.funcionario">
+        <MappingFragment StoreEntitySet="funcionario">
+          <ScalarProperty Name="idfuncionario" ColumnName="idfuncionario" />
+          <ScalarProperty Name="matricula" ColumnName="matricula" />
+          <ScalarProperty Name="idusuario" ColumnName="idusuario" />
+          <ScalarProperty Name="treinamento" ColumnName="treinamento" />
+          <ScalarProperty Name="idsala" ColumnName="idsala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="predio">
+      <EntityTypeMapping TypeName="PI4_WSModel.predio">
+        <MappingFragment StoreEntitySet="predio">
+          <ScalarProperty Name="idpredio" ColumnName="idpredio" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="qtdandar" ColumnName="qtdandar" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sala">
+      <EntityTypeMapping TypeName="PI4_WSModel.sala">
+        <MappingFragment StoreEntitySet="sala">
+          <ScalarProperty Name="idsala" ColumnName="idsala" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="andar" ColumnName="andar" />
+          <ScalarProperty Name="idpredio" ColumnName="idpredio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
