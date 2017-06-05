@@ -100,6 +100,8 @@
     <Compile Include="Modelo\predio.cs">
       <DependentUpon>EDM.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modelo\RepositorioFuncionario.cs" />
+    <Compile Include="Modelo\RepositorioPredio.cs" />
     <Compile Include="Modelo\RepositorioSala.cs" />
     <Compile Include="Modelo\sala.cs">
       <DependentUpon>EDM.tt</DependentUpon>

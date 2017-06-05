@@ -6,7 +6,7 @@
     </Key>
     <Property Name="idfuncionario" Type="Int32" Nullable="false" />
     <Property Name="matricula" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="idusuario" Type="Int32" Nullable="false" />
+    <Property Name="idusuario" Nullable="false" Type="Int32" />
     <Property Name="treinamento" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="idsala" Type="Int32" Nullable="false" />
   </EntityType>
