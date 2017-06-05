@@ -1,0 +1,6 @@
+c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\bin\PI4_WEBSERVICE.dll.config
+c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\bin\PI4_WEBSERVICE.dll
+c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\bin\PI4_WEBSERVICE.pdb
+c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.csprojResolveAssemblyReference.cache
+c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.dll
+c:\Users\rphlmbzr\documents\visual studio 2017\Projects\PI4-WF\PI4_WEBSERVICE\obj\Debug\PI4_WEBSERVICE.pdb
