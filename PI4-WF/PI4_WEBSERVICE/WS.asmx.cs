@@ -16,11 +16,9 @@ namespace PI4_WEBSERVICE
     public class WS : System.Web.Services.WebService
     {
         private RepositorioSala repsala;
-
-      //  [XmlInclude(typeof(sala))]
-      //  [XmlInclude(typeof(funcionario))]
-      //  [XmlInclude(typeof(predio))]
-
+        private RepositorioPredio reppredio;
+        private RepositorioFuncionario repfuncionario;
+        
         [WebMethod]
           
         public List<sala> GetSalas() {
@@ -31,5 +29,22 @@ namespace PI4_WEBSERVICE
 
         }
 
+        [WebMethod]
+
+        public List<predio> GetPredios() {
+
+            reppredio = new RepositorioPredio();
+
+            return reppredio.Getall();
+        }
+
+        [WebMethod]
+
+        public List<funcionario> GetFuncionarios() {
+
+            repfuncionario = new RepositorioFuncionario();
+
+            return repfuncionario.Getall();
+        }
     }
 }
